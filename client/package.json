@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -43,6 +43,7 @@
     "jquery": "^3.7.1",
     "js-beautify": "^1.15.1",
     "marked": "^12.0.2",
+    "md-editor-v3": "^4.15.6",
     "mitt": "^3.0.1",
     "monaco-editor": "^0.48.0",
     "notyf": "^3.10.0",

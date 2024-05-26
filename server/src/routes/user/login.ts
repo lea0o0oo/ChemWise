@@ -45,6 +45,7 @@ router.post("/login", async (req: express.Request, res: express.Response) => {
           userId: userData._id,
           completedSetup: userData.completedSetup,
           avatarUrl: userData.avatarUrl,
+          staff: userData.staff,
         },
       });
     } else {

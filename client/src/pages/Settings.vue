@@ -112,13 +112,10 @@ async function save() {
       }
     )
     .then(() => {
-      localStorage.setItem(
-        "userData",
-        JSON.stringify({
-          username: usernameInput.value.value,
-          id: JSON.parse(localStorage.getItem("userData")).id,
-        })
-      );
+      let oldLstorage = JSON.parse(localStorage.getItem("userData"));
+      oldLstorage.username = usernameInput.value.value;
+      oldLstorage.id = JSON.parse(localStorage.getItem("userData")).id;
+      localStorage.setItem("userData", JSON.stringify(oldLstorage));
       utils.notyf("Cambiamenti salvaiti", "success");
     })
     .catch((err) => {

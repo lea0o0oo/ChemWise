@@ -419,6 +419,11 @@ function setThumbnail() {
           style="display: flex; align-items: center; justify-content: right"
           class="lg:flex-nowrap md:flex-nowrap flex-wrap gap-1 lg:w-full lg:ml-0 ml-10"
         >
+          <select name="cars" id="cars" class="dark:bg-black mr-2 hidden">
+            <option value="volvo">Moli</option>
+            <option value="saab">Stati di aggregazione</option>
+            <option value="mercedes">Polarità</option>
+          </select>
           <button
             class="btn solid info mr-3 hidden"
             id="publishBTN"
@@ -452,7 +457,7 @@ function setThumbnail() {
       <div class="grid lg:grid-cols-2 grid-cols-1 gap-6 mt-3">
         <div class="w-full">
           <div
-            class="relative rounded-xl lg:w-full max-w-[551.22px] h-[calc((100vh_-_70px)_/_2)] w-[calc(100%)] min-h-[433px]"
+            class="relative rounded-xl lg:w-full lg:min-w-[551.22px] max-w-[551.22px] h-[calc((100vh_-_70px)_/_2)] w-[calc(100%)] min-h-[433px]"
             id="playerDIV"
           >
             <div class="relative w-full h-full" id="cover">

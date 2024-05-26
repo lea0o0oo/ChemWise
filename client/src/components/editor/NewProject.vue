@@ -62,16 +62,16 @@ function create() {
         <div class="gap-3 mt-2">
           <div id="premade" class="none">
             <CreateBtn
-              img="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Blue_question_mark_icon.svg/2048px-Blue_question_mark_icon.svg.png"
+              img="https://cdn-icons-png.freepik.com/512/3773/3773729.png"
               text="Slideshow"
               subtitle="Slideshows interattive"
               @click="step2('slideshow')"
             />
             <CreateBtn
-              img="/iframe.png"
-              text="Incorpora"
-              subtitle="Incorpora un sito"
-              :disabled="true"
+              img="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Blue_question_mark_icon.svg/2048px-Blue_question_mark_icon.svg.png"
+              text="Quiz"
+              subtitle="Crea un quiz"
+              @click="step2('quiz')"
             />
             <CreateBtn
               img="/code-icon.png"
@@ -83,9 +83,8 @@ function create() {
             <CreateBtn
               img="/blockly-icon.png"
               text="Blocchi"
-              subtitle="PixyJS v7, Potrai convertire a codice"
+              subtitle="PixyJS v7 (non finito)"
               @click="step2('blocks')"
-              :disabled="true"
             />
             <CreateBtn
               img="/code-icon.png"

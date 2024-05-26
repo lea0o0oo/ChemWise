@@ -29,12 +29,14 @@ function login() {
           username: response.data.data.username,
           id: response.data.data.userId,
           avatarUrl: response.data.data.avatarUrl,
+          staff: response.data.data.staff,
         })
       );
       if (!response.data.data.completedSetup) {
         window.location.href = "/firstSetup";
       } else {
-        window.location.href = "/projects";
+        if (response.data.data.staff) window.location.href = "/projects";
+        else window.location.href = "/";
       }
     })
     .catch((err) => {

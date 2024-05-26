@@ -5,6 +5,7 @@ import utils from "../helpers/utils";
 import NewProject from "../components/editor/NewProject.vue";
 import EditorBlocks from "../components/editor/EditorBlocks.vue";
 import CodeEditor from "../components/editor/CodeEditor.vue";
+import QuizEditor from "../components/editor/QuizEditor/QuizEditor.vue";
 import SlideshowEditor from "./slideshowEditor/SlideshowEditor.vue";
 import axios from "axios";
 
@@ -84,4 +85,5 @@ onMounted(async () => {
   <EditorBlocks v-if="projectType == 'blocks'" :projectData="projectData" />
   <CodeEditor v-if="projectType == 'code'" :projectData="projectData" />
   <SlideshowEditor v-if="projectType == 'slideshow'" />
+  <QuizEditor v-if="projectType == 'quiz'" />
 </template>

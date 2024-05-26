@@ -18,6 +18,7 @@ function logout() {
   window.location.reload();
 }
 const router = useRouter();
+const showCreate = JSON.parse(localStorage.getItem("userData"))?.staff || false;
 
 // In your main JavaScript file or a component
 onMounted(() => {
@@ -93,12 +94,16 @@ onMounted(() => {
     <div
       class="max-w-screen flex flex-wrap items-center justify-between mx-auto p-4"
     >
-      <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <img src="/icon.png" class="h-8" alt="Flowbite Logo" />
-        <span
-          class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
-          >{{ config.name }}</span
+      <a class="flex items-center space-x-3 rtl:space-x-reverse">
+        <a href="/" class="flex">
+          <img src="/icon.png" class="h-8 mr-2" alt="Flowbite Logo" />
+          <span
+            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+            >{{ config.name }}</span
+          ></a
         >
+
+        <button class="btn solid success sm">Feedback</button>
       </a>
       <button
         data-collapse-toggle="navbar-default"
@@ -193,7 +198,7 @@ onMounted(() => {
               >Esplora</RouterLink
             >
           </li>
-          <li>
+          <li class="hidden">
             <RouterLink
               to="/editor/new"
               class="block lg:mb-0 mb-2 lg:text-center text-left text-gray-900 rounded hover:bg-gray-100 md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-gray-100"
@@ -299,7 +304,7 @@ onMounted(() => {
                     >Progetti</RouterLink
                   >
                 </li>
-                <li>
+                <li v-if="showCreate">
                   <RouterLink
                     to="/editor/new"
                     class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"

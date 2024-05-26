@@ -18,6 +18,14 @@ const schema = new mongoose.Schema({
       message: (props) => "'" + props.value + "' is not a valid username",
     },
   },
+  staff: {
+    type: Boolean,
+    default: () => false,
+  },
+  balance: {
+    type: Number,
+    default: 0,
+  },
   password: {
     type: String,
     required: true,

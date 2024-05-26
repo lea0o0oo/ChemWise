@@ -25,9 +25,10 @@ const schema = new mongoose.Schema({
         var ok = true;
         if (
           value != "slideshow" &&
-          value != "iframe" &&
-          value != "blocks" &&
-          value != "code"
+          value != "quiz" &&
+          value != "code" &&
+          value != "customCode" &&
+          value != "blocks"
         )
           ok = false;
         return ok;
@@ -35,6 +36,8 @@ const schema = new mongoose.Schema({
       message: (props) => "'" + props.value + "' is not a valid type",
     },
   },
+  fakeType: String,
+  argument: String,
   data: {
     type: Object,
     required: true,

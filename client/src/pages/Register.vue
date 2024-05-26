@@ -59,6 +59,7 @@ function login() {
           username: response.data.data.username,
           id: response.data.data.userId,
           avatarUrl: response.data.data.avatarUrl,
+          staff: false,
         })
       );
       window.location.href = "/firstSetup";

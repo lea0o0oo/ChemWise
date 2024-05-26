@@ -1,11 +1,20 @@
 <script setup>
-defineProps({
-  author: String,
-  date: String,
+const props = defineProps({
   thumbnail: String,
   title: String,
   id: String,
+  type: String,
 });
+
+//console.log(props.type);
+let badgeData = {};
+if (props.type == "slideshow") {
+  badgeData.type = "Appunti";
+  badgeData.color = "success";
+} else if (props.type == "code") {
+  badgeData.type = "Simulazione";
+  badgeData.color = "info";
+}
 </script>
 
 <template>
@@ -29,7 +38,17 @@ defineProps({
         <div
           class="absolute inset-x-0 bottom-0 z-20 p-4 text-white group-hover:hidden"
         >
-          <div class="text-xs">{{ author }} • {{ date }}</div>
+          <div class="flex gap-2">
+            <div class="text-xs">
+              <div :class="'badge solid sm ' + badgeData.color">
+                {{ badgeData.type }}
+              </div>
+            </div>
+            <div class="text-xs hidden">
+              <div class="badge solid bw sm">Moli</div>
+            </div>
+          </div>
+
           <h3 class="text-xl font-semibold">{{ title }}</h3>
         </div>
       </div>

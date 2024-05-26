@@ -433,6 +433,7 @@ function ifxd() {
 
 input[placeholder="Search"] {
   width: calc(var(--toolbox-width) + 15px);
+  height: 30px;
 }
 
 @media (prefers-color-scheme: dark) {
