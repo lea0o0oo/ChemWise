@@ -1,0 +1,39 @@
+<svg viewBox="0 0 150 100" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com" class="fill-neutral-400 dark:fill-neutral-800">
+  <defs>
+    <style bx:fonts="AR One Sans">@import url(https://fonts.googleapis.com/css2?family=AR+One+Sans%3Aital%2Cwght%400%2C400..700&amp;display=swap);</style>
+  </defs>
+  <rect x="-3.885" y="-0.995" width="157.298" height="48.249" style="" transform="matrix(1, 0, 0, 1, 1.4210854715202004e-14, 0)"/>
+  <text style="fill: rgb(255, 255, 255); font-family: 'AR One Sans'; font-size: 20px; font-weight: 700; white-space: pre; text-anchor: end;" y="30.046" x="78.797" transform="matrix(1, 0, 0, 1, 1.4210854715202004e-14, 0)">?</text>
+  <g transform="matrix(1, 0, 0, 1, -8.66923618316649, 34.67694473266602)">
+    <g>
+      <g>
+        <g>
+          <rect x="14.663" y="27.46" width="65.968" height="15.535" style=""/>
+          <rect x="14.562" y="45.806" width="65.968" height="15.535" style=""/>
+        </g>
+      </g>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 0, 1)">
+      <text style="fill: rgb(255, 255, 255); font-family: 'AR One Sans'; font-size: 13.3px; font-weight: 700; text-anchor: end; white-space: pre;" x="26.427" y="39.3">A</text>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -1, 19)">
+      <text style="fill: rgb(255, 255, 255); font-family: 'AR One Sans'; font-size: 13.3px; font-weight: 700; text-anchor: end; white-space: pre;" x="26.427" y="39.3">B</text>
+    </g>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 63.331001281738295, 34.67700195312501)">
+    <g>
+      <g>
+        <g>
+          <rect x="14.663" y="27.46" width="65.968" height="15.535" style=""/>
+          <rect x="14.562" y="45.806" width="65.968" height="15.535" style=""/>
+        </g>
+      </g>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -1, 1)">
+      <text style="fill: rgb(255, 255, 255); font-family: 'AR One Sans'; font-size: 13.3px; font-weight: 700; text-anchor: end; white-space: pre;" x="26.427" y="39.3">C</text>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 0, 19)">
+      <text style="fill: rgb(255, 255, 255); font-family: 'AR One Sans'; font-size: 13.3px; font-weight: 700; text-anchor: end; white-space: pre;" x="26.427" y="39.3">D</text>
+    </g>
+  </g>
+</svg>

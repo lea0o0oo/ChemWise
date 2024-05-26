@@ -1,0 +1,12 @@
+import "./anchor";
+import "./set_positon";
+import "./set_texture";
+import "./set_dimension";
+import "./get_dimentions";
+import "./set_scale";
+import "./slide";
+import "./slide_hard";
+import "./get_position";
+import "./set_skew";
+import "./set_zindex";
+import "./set_visibility";

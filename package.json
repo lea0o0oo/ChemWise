@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "dev": "echo Sei nella cartella principale!",
+    "test": "echo Sei nella cartella principale!",
+    "build": "echo Sei nella cartella principale!",
+    "start": "echo Sei nella cartella principale!"
+  }
+}

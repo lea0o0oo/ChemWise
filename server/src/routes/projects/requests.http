@@ -1,0 +1,65 @@
+### Create project
+
+POST http://localhost:3000/project/create HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJpZCI6IjY2MDgyYmUwNzQzZDU4ZmJjMWMyZjBlNiIsImxvZ2dlZEF0IjoxNzExODExNTUzNzg2LCJpYXQiOjE3MTE4MTE1NTMsImV4cCI6MTcxMTgxODc1M30.4B6N5hNOIxmh-MRS8ucORDoDRuKsC_vpySdD6or5VBA
+{
+  "name": "",
+  "description": "",
+  "type": "",
+  "data": {}
+}
+
+### Get projects
+
+GET http://localhost:3000/projects HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJpZCI6IjY2MTk5MjMxYmVmZWJlMjE0YWQzYzc4NSIsImxvZ2dlZEF0IjoxNzEzNDY4MzY0NzMyLCJpYXQiOjE3MTM0NjgzNjQsImV4cCI6MTcxMzQ3NTU2NH0.RJXWjJ8FfsTOzDyiCQFdefzkFSCSGVZ3CJMc6RnIe6U
+
+### Get one project
+
+GET http://localhost:3000/project/66201b374eb83cae7b2ddebc HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJpZCI6IjY2MTk5MjMxYmVmZWJlMjE0YWQzYzc4NSIsImxvZ2dlZEF0IjoxNzEzNDY4MzY0NzMyLCJpYXQiOjE3MTM0NjgzNjQsImV4cCI6MTcxMzQ3NTU2NH0.RJXWjJ8FfsTOzDyiCQFdefzkFSCSGVZ3CJMc6RnIe6U
+
+### Save
+
+POST http://localhost:3000/project/662569d0b0a2051e18b471f4 HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJpZCI6IjY2MTk5MjMxYmVmZWJlMjE0YWQzYzc4NSIsImxvZ2dlZEF0IjoxNzEzNzI4NDU3MDI3LCJpYXQiOjE3MTM3Mjg0NTcsImV4cCI6MTcxMzczNTY1N30.2eoeiv9ibhVvD2pvIEAQtt28mjN9OsEaMF5XK64Dfq8
+
+{
+  "code": "e"
+}
+
+### Fetch comments
+
+GET http://localhost:3000/comments/662c086195ef65f3ebdeb7d9 HTTP/1.1
+content-type: application/json
+
+### Post comment
+
+POST http://localhost:3000/comments/662c086195ef65f3ebdeb7d9 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJpZCI6IjY2MTk5MjMxYmVmZWJlMjE0YWQzYzc4NSIsImxvZ2dlZEF0IjoxNzE0MzEyNjkwMTY0LCJpYXQiOjE3MTQzMTI2OTAsImV4cCI6MTcxNDMxOTg5MH0.KRPbrqjanBLyFc8lQ9JG3fkn5DThLnoerIgiuCLLWqY
+content-type: application/json
+
+{
+  "content": "Comment content",
+  "replyTo": ""
+}
+
+### Fetch replies
+
+GET http://localhost:3000/replies/662c086195ef65f3ebdeb7d9/662e5dd92b792c1a2d45fd2a/ HTTP/1.1
+content-type: application/json
+
+### Update info
+
+POST http://localhost:3000/projectInfo/662c086195ef65f3ebdeb7d9 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJpZCI6IjY2MTk5MjMxYmVmZWJlMjE0YWQzYzc4NSIsImxvZ2dlZEF0IjoxNzE0NTU0ODk4NzU2LCJpYXQiOjE3MTQ1NTQ4OTgsImV4cCI6MTcxNDU2MjA5OH0._VlqKQFaPSP2LQxGbnx-6C2czBBLwnD93haimiJ2-Jk
+content-type: application/json
+
+{
+  "name": "aaa",
+  "description": "aaa"
+}

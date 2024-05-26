@@ -1,0 +1,15 @@
+<svg viewBox="0 0 150 100" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com" class="fill-neutral-400 dark:fill-neutral-800">
+  <defs>
+    <style bx:fonts="AR One Sans">@import url(https://fonts.googleapis.com/css2?family=AR+One+Sans%3Aital%2Cwght%400%2C400..700&amp;display=swap);</style>
+  </defs>
+  <rect x="-3.885" y="-0.995" width="157.298" height="18.612" style="" transform="matrix(1, 0, 0, 1, 1.4210854715202004e-14, 0)"/>
+  <text style="fill: rgb(255, 255, 255); font-family: 'AR One Sans'; font-size: 20px; font-weight: 700; white-space: pre; text-anchor: end;" y="15.732" x="79.603" transform="matrix(1, 0, 0, 1, 1.4210854715202004e-14, 0)">?</text>
+  <rect x="9.219" y="27.057" width="131.29" height="15.535" style="" transform="matrix(1, 0, 0, 1, 1.4210854715202004e-14, 0)"/>
+  <rect x="9.219" y="44.057" width="131.29" height="15.535" style="" transform="matrix(1, 0, 0, 1, 1.4210854715202004e-14, 0)"/>
+  <rect x="9.219" y="61.057" width="131.29" height="15.535" style="" transform="matrix(1, 0, 0, 1, 1.4210854715202004e-14, 0)"/>
+  <rect x="9.219" y="78.057" width="131.29" height="15.535" style="" transform="matrix(1, 0, 0, 1, 1.4210854715202004e-14, 0)"/>
+  <text style="fill: rgb(255, 255, 255); font-family: 'AR One Sans'; font-size: 13.3px; font-weight: 700; text-anchor: end; white-space: pre;" x="20.983" y="39.3" transform="matrix(1, 0, 0, 1, 1.4210854715202004e-14, 0)">A</text>
+  <text style="fill: rgb(255, 255, 255); font-family: 'AR One Sans'; font-size: 13.3px; font-weight: 700; text-anchor: end; white-space: pre;" x="19.983" y="56.3" transform="matrix(1, 0, 0, 1, 1.4210854715202004e-14, 0)">B</text>
+  <text style="fill: rgb(255, 255, 255); font-family: 'AR One Sans'; font-size: 13.3px; font-weight: 700; text-anchor: end; white-space: pre;" x="19.983" y="73.3" transform="matrix(1, 0, 0, 1, 1.4210854715202004e-14, 0)">C</text>
+  <text style="fill: rgb(255, 255, 255); font-family: 'AR One Sans'; font-size: 13.3px; font-weight: 700; text-anchor: end; white-space: pre;" x="20.983" y="90.3" transform="matrix(1, 0, 0, 1, 1.4210854715202004e-14, 0)">D</text>
+</svg>

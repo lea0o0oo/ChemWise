@@ -1,0 +1,17 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "outDir": "./dist",
+    "allowJs": true,
+    "target": "es5",
+    "lib": ["ES2021", "DOM"],
+    "allowUnreachableCode": false,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "typeRoots": ["./typings"],
+    "outFile": "./dist/combined.js",
+    "esModuleInterop": true
+  },
+  "include": ["./**/*"],
+  "exclude": ["./plugins/**/*", "./typings/**/*", "./dist/**/*"]
+}

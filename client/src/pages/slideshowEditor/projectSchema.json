@@ -1,0 +1,48 @@
+{
+  "slides": [
+    {
+      "type": "info",
+      "template": 1,
+      "layout": {
+        "1": {
+          "type": "text / image / video / iframe / slideshow",
+          "allowedType": "text / any",
+          "data": "data"
+        },
+        "2": {
+          "type": "text / image / video / iframe / slideshow",
+          "data": "data"
+        }
+      }
+    },
+    {
+      "type": "quiz",
+      "quizType": "trueFalse",
+      "template": 3,
+      "data": {
+        "question": "text / image / video",
+        "maxTime": 0,
+        "answers": {
+          "true": "idk",
+          "false": "idk2"
+        },
+        "correct": "true"
+      }
+    },
+    {
+      "type": "quiz",
+      "quizType": "multiChoice",
+      "template": 2,
+      "data": {
+        "question": "text / image / video",
+        "maxTime": 0,
+        "answers": {
+          "a": "idk",
+          "b": "idk2",
+          "c": "idk3"
+        },
+        "correct": "b"
+      }
+    }
+  ]
+}

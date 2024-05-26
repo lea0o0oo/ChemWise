@@ -1,0 +1,89 @@
+:root {
+  --light-bg: rgb(255, 255, 255);
+  --dark-bg: rgb(38 38 38);
+}
+
+/* :root[data-theme="dark"] {
+  .fieldColourSliderContainer {
+    color: white;
+    background-color: gb(#ffffff22 / 75);
+  }
+  .blocklyDropDownDiv {
+    @apply bg-neutral-900;
+    border: rgb(#ffffff09 / 75);
+  }
+  .fieldColourSlider {
+    background-color: rgb(#ffffff22 / 75);
+  }
+  .fieldColourSliderLabel {
+    @apply opacity-80;
+  }
+  .fieldColourEyedropper {
+    @apply opacity-80;
+  }
+} */
+
+div:not([class]):not([style]) {
+  background-color: var(--light-bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  .htmlBG:is(.dark *) {
+    background-color: var(--dark-bg);
+  }
+  div:not([class]):not([style]):is(.dark *) {
+    background-color: var(--dark-bg);
+    color: white;
+  }
+  (p,h1,h2,h3,h4,h5,h6):is(.dark *) {
+    color: white;
+    @apply opacity-90;
+  }
+}
+
+div:not([class]):not([style]):is(.dark *) {
+  @apply dark:bg-neutral-800;
+}
+
+/* Blockly toolbox fix, do not remove */
+svg[display="none"] {
+  display: none;
+}
+.injectionDiv {
+  @apply rounded-xl;
+}
+
+/* Scrollbar */
+:root {
+  --scrollbarBG: transparent;
+  --scrollbarColor: gray;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbarColor) var(--scrollbarBG);
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbarColor);
+  border-radius: 14px;
+  border: 3px solid var(--scrollbarBG);
+}
+
+.none {
+}
+
+.modal:not(.customStyle) {
+  @apply w-full lg:max-w-xl;
+}
