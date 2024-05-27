@@ -9,12 +9,17 @@ const currentColor = colors[Math.floor(Math.random() * colors.length)];
 
 const props = defineProps({
   text: String,
+  isDev: {
+    type: Boolean,
+    default: false,
+  },
 });
 const correctElem = ref(null);
 const wrongElem = ref(null);
 const currentElem = ref(null);
 
 function handleAnswer() {
+  if (props.isDev) return;
   if (!props.text.includes("--correct")) {
     currentElem.value.classList.add("opacity-50");
     wrongElem.value.classList.remove("hidden");
@@ -27,6 +32,7 @@ function handleAnswer() {
 }
 eventBus.addEventListener("showAnswers", handleAnswer);
 function validateAnswer() {
+  if (props.isDev) return;
   eventBus.dispatchEvent(
     new CustomEvent("showAnswers", { detail: props.text.includes("--correct") })
   );

@@ -240,6 +240,7 @@ document.addEventListener("keydown", (event) => {
         <AnswerButton
           v-for="i in projectData[currentIndex].answers"
           :text="i"
+          :isDev="true"
         />
       </div>
     </div>
