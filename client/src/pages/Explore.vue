@@ -3,15 +3,26 @@ import Card from "../components/explore/Card.vue";
 import axios from "axios";
 import utils from "../helpers/utils";
 import { useRoute } from "vue-router";
-import { onMounted, reactive } from "vue";
+import { onMounted, reactive, ref, nextTick } from "vue";
 
 let projects = reactive([]);
 const route = useRoute();
+const renderComponent = ref(true);
 
+const forceRerender = async () => {
+  renderComponent.value = false;
+  await nextTick();
+  renderComponent.value = true;
+};
 onMounted(async () => {
   let url = "/explore";
-  if (route.query.q) url += `/?q=${route.query.q}`;
-  const response = (await axios.get(url)).data;
+  const params = new URLSearchParams();
+  // url += `/?q=${route.query.q || ""}`;
+  // url += `&type=${route.query.type || ""}`;
+  if (route.query.q) params.append("q", route.query.q);
+  if (route.query.type) params.append("type", route.query.type);
+
+  const response = (await axios.get(url, { params })).data;
   response.data.docs.forEach((doc) => {
     projects.push(doc);
   });
@@ -20,6 +31,31 @@ onMounted(async () => {
   document.getElementById("mainDIV").classList.remove("hidden");
   document.getElementById("bgContainer").classList.remove("hidden");
 });
+
+async function loadSorted(type) {
+  projects = [];
+  document.getElementById("loader").classList.remove("hidden");
+  document.getElementById("mainDIV").classList.add("grid");
+  document.getElementById("mainDIV").classList.add("hidden");
+  document.getElementById("bgContainer").classList.remove("hidden");
+  let url = "/explore";
+  const params = new URLSearchParams();
+  // url += `/?q=${route.query.q || ""}`;
+  // url += `&type=${route.query.type || ""}`;
+  if (route.query.q) params.append("q", route.query.q);
+  params.append("type", type);
+
+  const response = (await axios.get(url, { params })).data;
+  response.data.docs.forEach((doc) => {
+    projects.push(doc);
+  });
+  console.log(projects);
+  document.getElementById("loader").classList.add("hidden");
+  document.getElementById("mainDIV").classList.add("grid");
+  document.getElementById("mainDIV").classList.remove("hidden");
+  document.getElementById("bgContainer").classList.remove("hidden");
+  forceRerender();
+}
 </script>
 
 <template>
@@ -35,7 +71,7 @@ onMounted(async () => {
   <div class="w-full min-h-[calc(100vh-70px)] hidden" id="bgContainer">
     <div class="flex w-full justify-end px-5 pt-3 items-center">
       <h3 class="font-bold text-xl w-full hidden">Risultati per: x</h3>
-      <div class="dropdown bw">
+      <div class="dropdown bw hidden">
         <label class="btn solid sm pill" tabindex="0"
           >Tutti gli argomenti
           <svg
@@ -82,9 +118,21 @@ onMounted(async () => {
           </svg>
         </label>
         <div class="menu bottom-left">
-          <a class="item text-sm success" tabindex="-1">Appunti</a>
-          <a class="item text-sm danger" tabindex="-1">Quiz</a>
-          <a class="item text-sm info" tabindex="-1">Simulazioni</a>
+          <a
+            class="item text-sm success"
+            tabindex="-1"
+            @click="loadSorted('slideshow')"
+            >Appunti</a
+          >
+          <a
+            class="item text-sm danger"
+            tabindex="-1"
+            @click="loadSorted('quiz')"
+            >Quiz</a
+          >
+          <a class="item text-sm info" tabindex="-1" @click="loadSorted('code')"
+            >Simulazioni</a
+          >
         </div>
       </div>
     </div>
@@ -93,6 +141,7 @@ onMounted(async () => {
       id="mainDIV"
     >
       <Card
+        v-if="renderComponent"
         v-for="i in projects"
         :thumbnail="i.thumbnail"
         :title="i.name"

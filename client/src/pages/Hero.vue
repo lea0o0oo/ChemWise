@@ -1,6 +1,10 @@
 <script setup>
 import projectConfig from "../../projectConfig";
 import Card from "../components/explore/Card.vue";
+
+function exploreIDK(type) {
+  window.location.href = `/explore?type=${type}`;
+}
 </script>
 <template>
   <div class="w-full min-h-[calc(100vh-70px)] pt-10 lg:px-20 px-5">
@@ -8,9 +12,15 @@ import Card from "../components/explore/Card.vue";
     <div class="grid lg:grid-cols-2 grid-cols-1 w-full mb-[100px]">
       <div>
         <div class="flex gap-2">
-          <button class="btn solid success sm">Esplora appunti</button>
-          <button class="btn solid danger sm">Esplora quiz</button>
-          <button class="btn solid info sm">Esplora simulazioni</button>
+          <button class="btn solid success sm" @click="exploreIDK('slideshow')">
+            Esplora appunti
+          </button>
+          <button class="btn solid danger sm" @click="exploreIDK('quiz')">
+            Esplora quiz
+          </button>
+          <button class="btn solid info sm" @click="exploreIDK('code')">
+            Esplora simulazioni
+          </button>
         </div>
         <h1 class="mt-10 font-bold text-3xl">
           Cos'è {{ projectConfig.name }}?

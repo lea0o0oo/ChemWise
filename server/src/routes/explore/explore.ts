@@ -26,9 +26,10 @@ router.get("/explore", async (req: express.Request, res: express.Response) => {
     name: new RegExp("", "i"),
   };
   //@ts-ignore
-  if (req.query.type) query.type == req.query.type;
+  if (req.query.type) query.type = req.query.type;
   //@ts-ignore
   if (req.query.q) query.name = new RegExp(req.query.q, "i");
+  console.log(query);
   const projects = await Project.paginate(query, options);
   res.status(200).json({
     success: true,
