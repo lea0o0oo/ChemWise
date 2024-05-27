@@ -9,7 +9,7 @@ export default {
     host:
       process.env.DEV == "true"
         ? "http://localhost:3000"
-        : "https://campfirehub-backend.vercel.app",
+        : "https://chemwise-backend.vercel.app",
   },
   database: {
     connection_string: process.env.MONGO_CONNECTION_STR,

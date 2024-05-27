@@ -40,6 +40,7 @@ router.post(
 
     if (req.body.name) projectData.name = req.body.name;
     if (req.body.description) projectData.description = req.body.description;
+    if (!projectData.data) projectData.data = {};
     await projectData.save();
 
     res.status(200).json({

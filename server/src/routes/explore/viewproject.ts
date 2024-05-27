@@ -67,6 +67,9 @@ router.get("/view/:id", async (req: express.Request, res: express.Response) => {
     finalData.slides = projectData.data.slides;
     finalData.embedUrl = "";
     delete finalData.embedUrl;
+  } else if (projectData.type == "quiz") {
+    //@ts-ignore
+    finalData.questions = projectData.data.questions;
   }
   res.status(200).json({
     success: true,

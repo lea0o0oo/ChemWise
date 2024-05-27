@@ -23,6 +23,8 @@ router.get("/user/:id", async (req: express.Request, res: express.Response) => {
     data: {
       username: userData.username,
       avatar: userData.avatar,
+      avatarUrl: userData.avatarUrl,
+      balance: userData.balance,
     },
   });
 });

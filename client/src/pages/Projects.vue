@@ -92,7 +92,7 @@ function sortProjects(filter) {
         <button
           @click="sortProjects('forked')"
           style="width: 100%; height: 50px"
-          class="text-left dark:bg-neutral-800 bg-neutral-100 rounded-xl hover:opacity-75 mb-2 p-3"
+          class="text-left dark:bg-neutral-800 bg-neutral-100 rounded-xl hover:opacity-75 mb-2 p-3 hidden"
         >
           <p class="flex items-center">
             <svg

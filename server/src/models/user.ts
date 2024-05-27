@@ -49,6 +49,7 @@ const schema = new mongoose.Schema({
     type: Number,
     required: false,
   },
+  decoration: String,
   avatar: {
     skinColor: {
       type: String,

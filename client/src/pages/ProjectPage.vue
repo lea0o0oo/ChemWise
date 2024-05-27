@@ -15,6 +15,7 @@ import { reactive, ref } from "vue";
 import { eventBus } from "../event-bus";
 import { marked } from "marked";
 import DOMPurify from "isomorphic-dompurify";
+import QuizPlayer from "../components/player/QuizPlayer.vue";
 
 const store = useLikesStore();
 const route = useRoute();
@@ -25,6 +26,7 @@ let likesCounter = 0;
 const loadedProject = ref(false);
 const renderAvatar = ref(false);
 const avatarElem = ref(null);
+const renderQuiz = ref(false);
 
 // for slideshows
 let renderRenderer = ref(false);
@@ -48,6 +50,7 @@ interface ProjectInfo {
   likes: number;
   thumbnail: string;
   slides: Array<any>;
+  questions: Array<any>;
 }
 let projectInfo: ProjectInfo;
 
@@ -171,7 +174,7 @@ utils.onLoad(async () => {
     avatarElem.value.src = projectInfo.owner.avatarUrl;
   renderAvatar.value = true;
   loadedProject.value = true;
-  if (projectInfo.type == "slideshow")
+  if (projectInfo.type == "slideshow" || projectInfo.type == "quiz")
     document.getElementById("proj-reload").classList.add("hidden");
 
   if (projectInfo.description != "" && DOMPurify.isSupported) {
@@ -228,6 +231,10 @@ function loadProject() {
       else if (event.key == "ArrowLeft")
         document.getElementById("prevBTN").click();
     });
+  } else if (projectInfo.type == "quiz") {
+    console.log(projectInfo.questions);
+    document.getElementById("cover").classList.add("hidden");
+    renderQuiz.value = true;
   }
 }
 
@@ -501,6 +508,7 @@ function setThumbnail() {
               v-if="renderRenderer"
               :slides="projectInfo.slides"
             />
+            <QuizPlayer v-if="renderQuiz" :questions="projectInfo.questions" />
           </div>
 
           <div

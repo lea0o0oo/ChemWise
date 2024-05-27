@@ -1,0 +1,29 @@
+<script setup>
+const props = defineProps({
+  decor: Boolean,
+});
+</script>
+
+<template>
+  <button class="hover:border-2 border-spacing-2 rounded-xl">
+    <svg
+      width="42"
+      height="42"
+      viewBox="0 0 24 24"
+      data-name="Line Color"
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon line-color opacity-75"
+    >
+      <path
+        stroke="currentColor"
+        style="
+          fill: none;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          stroke-width: 2;
+        "
+        d="M12 4 9.22 9.27 3 10.11l4.5 4.1L6.44 20 12 17.27 17.56 20l-1.06-5.79 4.5-4.1-6.22-.84z"
+      />
+    </svg>
+  </button>
+</template>

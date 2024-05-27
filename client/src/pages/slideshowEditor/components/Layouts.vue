@@ -66,9 +66,9 @@ function select() {
         </button>
       </div>
     </div>
-    <p class="mt-3 mb-1">Quiz - <i class="opacity-50">in arrivo</i></p>
+    <p class="mt-3 mb-1 hidden">Quiz - <i class="opacity-50">in arrivo</i></p>
     <div
-      class="grid w-full gap-6 opacity-70"
+      class="grid w-full gap-6 opacity-70 hidden"
       style="grid-template-columns: repeat(auto-fit, minmax(100px, 1fr))"
     >
       <div class="none">
