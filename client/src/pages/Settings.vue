@@ -319,7 +319,7 @@ document.addEventListener("keydown", (event) => {
         <div class="w-full h-[calc(100%-40.78px)]">
           <h2 class="text-center font-bold text-3xl">Progetti piaciuti</h2>
           <div
-            class="grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 w-[calc(50%-2.5rem)]"
+            class="grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 w-full grid p-10"
             id="mainDIV"
           >
             <Card

@@ -36,12 +36,12 @@ router.post(
     try {
       let toCreate = req.body;
       toCreate.owner = req.user.id;
-      if (await Project.exists({ name: req.body.name, owner: req.user.id })) {
-        return res.status(409).json({
-          success: false,
-          error: "Project already exists",
-        });
-      }
+      // if (await Project.exists({ name: req.body.name, owner: req.user.id })) {
+      //   return res.status(409).json({
+      //     success: false,
+      //     error: "Project already exists",
+      //   });
+      // }
       const projectData = await Project.create(req.body);
       res.status(200).json({
         success: true,
