@@ -87,6 +87,10 @@ onMounted(() => {
     }
   });
 });
+
+function openFeedback() {
+  window.open("https://forms.gle/yXaTtjy6T6FihvN69", "_blank");
+}
 </script>
 
 <template>
@@ -103,7 +107,9 @@ onMounted(() => {
           ></a
         >
 
-        <button class="btn solid success sm">Feedback</button>
+        <button class="btn solid success sm" @click="openFeedback()">
+          Feedback
+        </button>
       </a>
       <button
         data-collapse-toggle="navbar-default"
@@ -311,7 +317,7 @@ onMounted(() => {
                     >Crea</RouterLink
                   >
                 </li>
-                <li>
+                <li class="hidden">
                   <RouterLink
                     to="/notifications"
                     class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"

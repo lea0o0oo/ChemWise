@@ -1,10 +1,11 @@
 <script setup>
 import projectConfig from "../../projectConfig";
+import Card from "../components/explore/Card.vue";
 </script>
 <template>
   <div class="w-full min-h-[calc(100vh-70px)] pt-10 lg:px-20 px-5">
     <!-- component -->
-    <div class="grid lg:grid-cols-2 grid-cols-1 w-full">
+    <div class="grid lg:grid-cols-2 grid-cols-1 w-full mb-[100px]">
       <div>
         <div class="flex gap-2">
           <button class="btn solid success sm">Esplora appunti</button>
@@ -21,8 +22,14 @@ import projectConfig from "../../projectConfig";
           semplice
         </p>
       </div>
-      <div>
-        <h1 class="text-center font-bold text-3xl">Risorse in primo piano</h1>
+      <div style="max-height: 300px">
+        <h1 class="text-center font-bold text-3xl">Progetto del momento</h1>
+        <Card
+          thumbnail="https://i.ibb.co/BNCLjJZ/9493118f3ea4.jpg"
+          title="Proprietà perdiche"
+          id="6653f5b872e2f6df13ac4516"
+          type="quiz"
+        />
       </div>
     </div>
     <!-- Icon Blocks -->

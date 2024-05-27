@@ -6,6 +6,9 @@ import utils from "../helpers/utils";
 import { eventBus } from "../event-bus";
 import html2canvas from "html2canvas";
 import DecButton from "../components/settings/DecButton.vue";
+import Card from "../components/explore/Card.vue";
+
+import { useRoute } from "vue-router";
 
 const usernameInput = ref(null);
 const showAvatarMaker = ref(false);
@@ -14,6 +17,8 @@ let avatarData = {};
 const avatarUrl = ref("");
 const roboIMG = ref(null);
 const currentBalance = ref(0);
+let projects = reactive([]);
+const route = useRoute();
 
 onMounted(() => {
   usernameInput.value.value = JSON.parse(
@@ -31,6 +36,20 @@ onMounted(() => {
       console.error(err);
       utils.notyf(err.response?.data?.error || "Errore", "error");
     });
+});
+
+onMounted(async () => {
+  let url = "/explore";
+  if (route.query.q) url += `/?q=${route.query.q}`;
+  const response = (await axios.get(url)).data;
+  console.log("caricato");
+  response.data.docs.forEach((doc: object) => {
+    projects.push(doc);
+  });
+  // document.getElementById("loader").classList.add("hidden");
+  // document.getElementById("likedDIV").classList.add("grid");
+  // document.getElementById("likedDIV").classList.remove("hidden");
+  // document.getElementById("bgContainer").classList.remove("hidden");
 });
 
 eventBus.addEventListener("avatarData", (event) => {
@@ -217,7 +236,10 @@ document.addEventListener("keydown", (event) => {
         <div
           class="mt-2 bg-neutral-950 rounded-xl w-full max-w-xl p-4 min-h-[104px]"
         >
-          <h4 class="font-bold text-xl">Decorazioni avatar</h4>
+          <div class="flex items-baseline opacity-75">
+            <h4 class="font-bold text-xl">Decorazioni avatar</h4>
+            <p class="ml-3">work in progress</p>
+          </div>
           <div class="flex flex-wrap gap-2">
             <!-- stella -->
             <button>
@@ -295,7 +317,19 @@ document.addEventListener("keydown", (event) => {
       </div>
       <div>
         <div class="w-full h-[calc(100%-40.78px)]">
-          <!-- ...-->
+          <h2 class="text-center font-bold text-3xl">Progetti piaciuti</h2>
+          <div
+            class="grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 w-[calc(50%-2.5rem)]"
+            id="mainDIV"
+          >
+            <Card
+              v-for="i in projects"
+              :thumbnail="i.thumbnail"
+              :title="i.name"
+              :type="i.type"
+              :id="i._id"
+            />
+          </div>
         </div>
       </div>
     </div>

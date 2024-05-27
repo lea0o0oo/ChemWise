@@ -14,6 +14,9 @@ if (props.type == "slideshow") {
 } else if (props.type == "code") {
   badgeData.type = "Simulazione";
   badgeData.color = "info";
+} else if (props.type == "quiz") {
+  badgeData.type = "Quiz";
+  badgeData.color = "danger";
 }
 </script>
 

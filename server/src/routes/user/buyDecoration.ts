@@ -15,7 +15,12 @@ router.post(
       return;
     }
     const userData = await User.findById(req.user.id);
-    userData.balance += req.body.coins;
+    if (userData.balance < 10)
+      return res.status(403).json({
+        success: false,
+        error: "Not enough coins",
+      });
+    userData.balance -= 10;
     await userData.save();
     res.status(200).json({
       success: true,
