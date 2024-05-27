@@ -70,6 +70,8 @@ async function next() {
     utils.hide("gridContainer");
     utils.show("resultsDIV");
     if (coinsCount.value < 0) coinsCount.value = 0;
+    if (localStorage.getItem("token") == null) utils.show("loggapls");
+    if (coinsCount.value < 0) return;
 
     axios
       .post(
@@ -114,6 +116,9 @@ eventBus.addEventListener("showAnswers", (correct) => {
         ❌ Risposte errate: {{ dataQuestions.length - correctCount }}
       </p>
       <p class="text-lg mt-2">🪙 Gettoni guadagnati: {{ coinsCount }}</p>
+      <p id="loggapls" class="hidden mt-2 font-bold text-xl">
+        Effettua il login per ottenere i gettoni
+      </p>
     </div>
     <article
       class="prose lg:prose-xl dark:prose-invert w-full max-h-[calc(100vh-70px-8px-8px-50px)]"
