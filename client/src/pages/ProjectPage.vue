@@ -464,7 +464,7 @@ function setThumbnail() {
       <div class="grid lg:grid-cols-2 grid-cols-1 gap-6 mt-3">
         <div class="w-full">
           <div
-            class="relative rounded-xl lg:w-full lg:min-w-[551.22px] max-w-[604px] h-[calc((100vh_-_70px)_/_2)] w-[calc(100%)] min-h-[433px]"
+            class="relative rounded-xl lg:w-full lg:min-w-[604px] max-w-[604px] h-[calc((100vh_-_70px)_/_2)] w-[calc(100%)] min-h-[433px]"
             id="playerDIV"
           >
             <div class="relative w-full h-full" id="cover">

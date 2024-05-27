@@ -17,6 +17,7 @@ import changePassword from "./user/changePassword.js";
 import updateUserData from "./user/updateData.js";
 import getUserData from "./user/getUserData.js";
 import addCoins from "./user/addCoins.js";
+import getLiked from "./user/getLiked.js";
 
 router.use("/", checkAuth);
 router.use("/", login);
@@ -25,6 +26,7 @@ router.use("/", changePassword);
 router.use("/", updateUserData);
 router.use("/", getUserData);
 router.use("/", addCoins);
+router.use("/", getLiked);
 
 // Projects
 import fetchMany from "./projects/fetchMany.js";

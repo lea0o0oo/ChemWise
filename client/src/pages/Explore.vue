@@ -137,7 +137,7 @@ async function loadSorted(type) {
       </div>
     </div>
     <div
-      class="grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 xl:w-full w-[calc(100%-2.5rem)] hidden"
+      class="grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 xl:w-full w-[calc(100%-2.5rem)] hidden px-5"
       id="mainDIV"
     >
       <Card

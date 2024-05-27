@@ -39,12 +39,16 @@ onMounted(() => {
 });
 
 onMounted(async () => {
-  let url = "/explore";
+  let url = "/getLiked";
   if (route.query.q) url += `/?q=${route.query.q}`;
-  const response = (await axios.get(url)).data;
-  console.log("caricato");
-  response.data.docs.forEach((doc: object) => {
-    projects.push(doc);
+  const response = (
+    await axios.get(url, {
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+    })
+  ).data;
+  response.docs.forEach((doc: object) => {
+    //@ts-ignore
+    projects.push(doc.project);
   });
   // document.getElementById("loader").classList.add("hidden");
   // document.getElementById("likedDIV").classList.add("grid");
@@ -234,7 +238,7 @@ document.addEventListener("keydown", (event) => {
           </svg>
         </div>
         <div
-          class="mt-2 bg-neutral-950 rounded-xl w-full max-w-xl p-4 min-h-[104px]"
+          class="mt-2 dark:bg-neutral-950 bg-neutral-200 rounded-xl w-full max-w-xl p-4 min-h-[104px]"
         >
           <div class="flex items-baseline opacity-75">
             <h4 class="font-bold text-xl">Decorazioni avatar</h4>

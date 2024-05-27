@@ -47,9 +47,9 @@ function exploreIDK(type) {
           </svg>
         </a>
       </div>
-      <div style="max-height: 300px">
+      <div class="none px-2">
         <h1 class="text-center font-bold text-3xl">Progetti in primo piano</h1>
-        <div class="grid lg:grid-cols-2 grid-cols-1 gap-6">
+        <div class="grid lg:grid-cols-2 grid-cols-1 gap-6 mt-5">
           <Card
             thumbnail="https://i.ibb.co/BNCLjJZ/9493118f3ea4.jpg"
             title="Proprietà perdiche"

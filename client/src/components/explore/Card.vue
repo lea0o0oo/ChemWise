@@ -24,7 +24,7 @@ if (props.type == "slideshow") {
   <button class="text-left w-full h-full">
     <a :href="'/project/' + id" class="w-full h-full">
       <div
-        class="overflow-hidden rounded-2xl has-shadow w-full h-full relative m-5 group hover:scale-105 hover:cursor-pointer transition-all"
+        class="overflow-hidden rounded-2xl has-shadow w-full h-full relative group hover:scale-105 hover:cursor-pointer transition-all"
         style="min-height: 250px"
       >
         <div class="w-full h-full">
